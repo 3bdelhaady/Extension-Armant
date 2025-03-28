@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Simple Icon</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+            margin: 20px;
+        }
+        .download-btn {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="icon128" width="128" height="128"></canvas>
+    <br>
+    <button class="download-btn" onclick="downloadIcon()">Lodeing ..</button>
+    <script>
+        const canvas = document.getElementById('icon128');
+        const ctx = canvas.getContext('2d');
+        
+        function drawIcon() {
+            ctx.fillStyle = '#4285F4';
+            ctx.fillRect(0, 0, 128, 128);
+            
+            ctx.beginPath();
+            ctx.arc(64, 64, 50, 0, Math.PI * 2);
+            ctx.fillStyle = 'white';
+            ctx.fill();
+            
+            ctx.fillStyle = '#4285F4';
+            ctx.font = 'bold 80px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('A', 64, 64);
+        }
+
+        function downloadIcon() {
+            const link = document.createElement('a');
+            link.download = 'icon128.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            alert('Done');
+        }
+
+        drawIcon();
+    </script>
+</body>
+</html> 

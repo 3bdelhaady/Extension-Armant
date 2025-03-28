@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Armant dawla",
+  "version": "1.0",
+  "description": "Get Facts about Armant every 3 hours",
+  "permissions": [
+    "activeTab",
+    "alarms",
+    "notifications"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icon.svg"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "icon.svg"
+  }
+} 
